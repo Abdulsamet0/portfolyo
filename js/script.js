@@ -133,7 +133,7 @@ function showStatus(message, type) {
 
 // Language handling
 const langBtn = document.getElementById('lang-btn');
-let currentLang = localStorage.getItem('lang') || 'tr';
+let currentLang = localStorage.getItem('lang') || 'en';
 
 const translations = {
     tr: {
