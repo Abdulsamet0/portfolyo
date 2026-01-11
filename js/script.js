@@ -206,16 +206,16 @@ function setLanguage(lang) {
     currentLang = lang;
     localStorage.setItem('lang', lang);
     langBtn.textContent = lang === 'tr' ? 'EN' : 'TR';
-    
+
     document.querySelectorAll('[data-i18n]').forEach(element => {
         const key = element.getAttribute('data-i18n');
         if (translations[lang][key]) {
-             // If key contains HTML (like spans in titles), use innerHTML
-             if(key.includes('_title')) {
-                 element.innerHTML = translations[lang][key];
-             } else {
-                 element.textContent = translations[lang][key];
-             }
+            // If key contains HTML (like spans in titles), use innerHTML
+            if (key.includes('_title')) {
+                element.innerHTML = translations[lang][key];
+            } else {
+                element.textContent = translations[lang][key];
+            }
         }
     });
 
@@ -225,7 +225,7 @@ function setLanguage(lang) {
             element.placeholder = translations[lang][key];
         }
     });
-    
+
     document.querySelectorAll('[data-value]').forEach(element => {
         const key = element.getAttribute('data-value');
         if (translations[lang][key]) {
@@ -243,114 +243,4 @@ langBtn.addEventListener('click', () => {
 setLanguage(currentLang);
 
 
-// Language handling
-const langBtn = document.getElementById('lang-btn');
-let currentLang = localStorage.getItem('lang') || 'tr';
-
-const translations = {
-    tr: {
-        nav_home: 'Ana Sayfa',
-        nav_about: 'Hakkımda',
-        nav_projects: 'Projelerim',
-        nav_blog: 'Blog',
-        nav_contact: 'İletişim',
-        btn_talk: 'Konuşalım',
-        hero_hi: 'Merhaba, Ben',
-        hero_desc: 'Gebze Teknik Üniversitesi Bilgisayar Mühendisliği öğrencisiyim. Kontrol sistemleri, robotik ve yapay zeka alanlarında kendimi geliştiriyor ve projeler üretiyorum.',
-        btn_read: 'Yazılarımı Oku',
-        about_title: 'Hakkımda <span class=\'highlight\'>Ben</span>',
-        about_desc: '2025 yılında Gebze Teknik Üniversitesi Bilgisayar Mühendisliği bölümünde eğitimime başladım. Teknolojiye olan tutkum beni özellikle robotik sistemler, otonom kontrol ve yapay zeka alanlarına yöneltti. Teorik bilgilerimi pratik projelerle destekleyerek geleceğin mühendislik çözümlerine katkıda bulunmayı hedefliyorum.',
-        skill_ai: 'Yapay Zeka',
-        skill_robotics: 'Robotik',
-        skill_control: 'Kontrol Sistemleri',
-        projects_title: 'Örnek <span class=\'highlight\'>Projelerim</span>',
-        proj_1_title: 'Çizgi İzleyen Robot',
-        proj_1_desc: 'PID kontrol algoritması kullanarak parkuru en kısa sürede tamamlayan otonom robot projesi.',
-        proj_2_title: 'Görüntü İşleme ile Nesne Takibi',
-        proj_2_desc: 'OpenCV ve Python kullanarak gerçek zamanlı renk ve şekil algılama sistemi.',
-        proj_3_title: 'IoT Akıllı Ev Sistemi',
-        proj_3_desc: 'NodeMCU ve mobil uygulama üzerinden kontrol edilebilen sıcaklık ve ışık otomasyonu.',
-        btn_view: 'İncele',
-        blog_title: 'Son <span class=\'highlight\'>Yazılar</span>',
-        contact_title: 'İletişim <span class=\'highlight\'>Kur</span>',
-        ph_name: 'Adınız Soyadınız',
-        ph_email: 'E-posta Adresiniz',
-        ph_phone: 'Telefon',
-        ph_subject: 'Konu',
-        ph_message: 'Mesajınız',
-        btn_send: 'Mesaj Gönder'
-    },
-    en: {
-        nav_home: 'Home',
-        nav_about: 'About',
-        nav_projects: 'Projects',
-        nav_blog: 'Blog',
-        nav_contact: 'Contact',
-        btn_talk: 'Let\'s Talk',
-        hero_hi: 'Hello, I\'m',
-        hero_desc: 'I am a Computer Engineering student at Gebze Technical University. I am developing myself in control systems, robotics, and artificial intelligence, and creating projects.',
-        btn_read: 'Read My Articles',
-        about_title: 'About <span class=\'highlight\'>Me</span>',
-        about_desc: 'I started my education in the Computer Engineering department at Gebze Technical University in 2025. My passion for technology directed me especially towards robotics systems, autonomous control, and artificial intelligence. I aim to contribute to future engineering solutions by supporting my theoretical knowledge with practical projects.',
-        skill_ai: 'Artificial Intelligence',
-        skill_robotics: 'Robotics',
-        skill_control: 'Control Systems',
-        projects_title: 'Sample <span class=\'highlight\'>Projects</span>',
-        proj_1_title: 'Line Follower Robot',
-        proj_1_desc: 'Autonomous robot project completing the track in the shortest time using PID control algorithm.',
-        proj_2_title: 'Object Tracking with Image Processing',
-        proj_2_desc: 'Real-time color and shape detection system using OpenCV and Python.',
-        proj_3_title: 'IoT Smart Home System',
-        proj_3_desc: 'Temperature and light automation controllable via NodeMCU and mobile app.',
-        btn_view: 'View',
-        blog_title: 'Latest <span class=\'highlight\'>Articles</span>',
-        contact_title: 'Contact <span class=\'highlight\'>Me</span>',
-        ph_name: 'Full Name',
-        ph_email: 'Email Address',
-        ph_phone: 'Phone',
-        ph_subject: 'Subject',
-        ph_message: 'Your Message',
-        btn_send: 'Send Message'
-    }
-};
-
-function setLanguage(lang) {
-    currentLang = lang;
-    localStorage.setItem('lang', lang);
-    langBtn.textContent = lang === 'tr' ? 'EN' : 'TR';
-    
-    document.querySelectorAll('[data-i18n]').forEach(element => {
-        const key = element.getAttribute('data-i18n');
-        if (translations[lang][key]) {
-             // If key contains HTML (like spans in titles), use innerHTML
-             if(key.includes('_title')) {
-                 element.innerHTML = translations[lang][key];
-             } else {
-                 element.textContent = translations[lang][key];
-             }
-        }
-    });
-
-    document.querySelectorAll('[data-placeholder]').forEach(element => {
-        const key = element.getAttribute('data-placeholder');
-        if (translations[lang][key]) {
-            element.placeholder = translations[lang][key];
-        }
-    });
-    
-    document.querySelectorAll('[data-value]').forEach(element => {
-        const key = element.getAttribute('data-value');
-        if (translations[lang][key]) {
-            element.value = translations[lang][key];
-        }
-    });
-}
-
-langBtn.addEventListener('click', () => {
-    const newLang = currentLang === 'tr' ? 'en' : 'tr';
-    setLanguage(newLang);
-});
-
-// Init Language
-setLanguage(currentLang);
 

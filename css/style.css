@@ -33,7 +33,7 @@ body {
     color: var(--text-color);
     font-family: var(--font-body);
     /* Custom Cursor Hide */
-    cursor: auto;
+    cursor: none;
 }
 
 /* Custom Cursor */
