@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolyo & Blog | Merhaba</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Space+Grotesk:wght@300;500;700&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="cursor-dot" id="cursor-dot"></div>
+    <div class="cursor-outline" id="cursor-outline"></div>
+
+    <header class="header">
+        <a href="#" class="logo">PORTFOLYO<span class="dot">.</span></a>
+        <nav class="navbar">
+            <a href="#home" class="active">Ana Sayfa</a>
+            <a href="#about">Hakkımda</a>
+            <a href="#projects">Projelerim</a>
+            <a href="#blog">Blog</a>
+            <a href="#contact">İletişim</a>
+        </nav>
+        <button class="btn-primary" onclick="document.getElementById('contact').scrollIntoView()">Konuşalım</button>
+    </header>
+
+    <section class="home" id="home">
+        <div class="home-content">
+            <h3>Merhaba, Ben</h3>
+            <h1>Abdulsamet ARSLAN</h1>
+            <p>Gebze Teknik Üniversitesi Bilgisayar Mühendisliği öğrencisiyim. Kontrol sistemleri, robotik ve yapay zeka
+                alanlarında kendimi geliştiriyor ve projeler üretiyorum.</p>
+            <div class="social-media">
+                <a href="https://github.com/Abdulsamet0" target="_blank"><i class="ri-github-fill"></i></a>
+                <a href="https://www.linkedin.com/in/abdulsamet-arslan/" target="_blank"><i
+                        class="ri-linkedin-fill"></i></a>
+            </div>
+            <a href="#blog" class="btn-primary">Yazılarımı Oku</a>
+        </div>
+        <div class="home-img">
+            <div class="glowing-circle"></div>
+            <!-- Placeholder for user image or illustration -->
+            <div class="img-placeholder"></div>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <h2 class="heading">Hakkımda <span class="highlight">Ben</span></h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>2025 yılında Gebze Teknik Üniversitesi Bilgisayar Mühendisliği bölümünde eğitimime başladım.
+                    Teknolojiye olan tutkum beni özellikle robotik sistemler, otonom kontrol ve yapay zeka alanlarına
+                    yöneltti. Teorik bilgilerimi pratik projelerle destekleyerek geleceğin mühendislik çözümlerine
+                    katkıda bulunmayı hedefliyorum.</p>
+                <div class="skills">
+                    <span class="skill-tag">C/C++</span>
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">Yapay Zeka</span>
+                    <span class="skill-tag">Robotik</span>
+                    <span class="skill-tag">Kontrol Sistemleri</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="projects" id="projects">
+        <h2 class="heading">Örnek <span class="highlight">Projelerim</span></h2>
+        <div class="projects-container">
+            <div class="project-box">
+                <i class="ri-robot-2-line project-icon"></i>
+                <h3>Çizgi İzleyen Robot</h3>
+                <p>PID kontrol algoritması kullanarak parkuru en kısa sürede tamamlayan otonom robot projesi.</p>
+                <a href="#" class="btn-primary">İncele</a>
+            </div>
+            <div class="project-box">
+                <i class="ri-eye-2-line project-icon"></i>
+                <h3>Görüntü İşleme ile Nesne Takibi</h3>
+                <p>OpenCV ve Python kullanarak gerçek zamanlı renk ve şekil algılama sistemi.</p>
+                <a href="#" class="btn-primary">İncele</a>
+            </div>
+            <div class="project-box">
+                <i class="ri-home-wifi-line project-icon"></i>
+                <h3>IoT Akıllı Ev Sistemi</h3>
+                <p>NodeMCU ve mobil uygulama üzerinden kontrol edilebilen sıcaklık ve ışık otomasyonu.</p>
+                <a href="#" class="btn-primary">İncele</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="blog" id="blog">
+        <h2 class="heading">Son <span class="highlight">Yazılar</span></h2>
+        <div class="blog-container" id="blog-container">
+            <!-- Blog yazıları JS ile buraya yüklenecek -->
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <h2 class="heading">İletişim <span class="highlight">Kur</span></h2>
+        <form action="https://formspree.io/f/xojjqaeo" method="POST" class="contact-form" id="contact-form">
+            <div class="input-box">
+                <input type="text" name="name" placeholder="Adınız Soyadınız" required>
+                <input type="email" name="email" placeholder="E-posta Adresiniz" required>
+            </div>
+            <div class="input-box">
+                <input type="number" name="phone" placeholder="Telefon">
+                <input type="text" name="subject" placeholder="Konu" required>
+            </div>
+            <textarea name="message" cols="30" rows="10" placeholder="Mesajınız" required></textarea>
+            <input type="submit" value="Mesaj Gönder" class="btn-primary">
+            <p id="form-status" class="form-status"></p>
+        </form>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-text">
+            <p>Copyright &copy; 2026 | Tüm Hakları Saklıdır.</p>
+        </div>
+        <div class="footer-iconTop">
+            <a href="#home">Yukarı</a>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
